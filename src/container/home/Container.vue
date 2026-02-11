@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-ignore
 import Award from './Award.vue';
 import Certification from './Certification.vue';
 import ProjectProducts from './ProjectProducts.vue';
