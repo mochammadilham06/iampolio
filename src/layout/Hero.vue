@@ -65,4 +65,11 @@
   left: 0%;
   z-index: -1;
 }
+
+@media (max-width: 1199px) {
+  .developer-line-wrapper::after {
+    content: none;
+    display: none;
+  }
+}
 </style>

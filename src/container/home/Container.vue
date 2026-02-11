@@ -6,12 +6,13 @@ import SectionAbout from './SectionAbout.vue';
 import Tech from './Tech.vue';
 import Window from './Window.vue';
 
+
 </script>
 <template>
     <div class="p-8">
         <SectionAbout />
         <Certification />
-        <Award />
+        <!-- <Award /> -->
         <Window />
         <ProjectProducts />
         <Tech />

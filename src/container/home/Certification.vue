@@ -1,12 +1,6 @@
 <script setup>
 import { reactive } from 'vue';
 
-// import googleLogo from '@/assets/svgs/google.svg';
-// import awsLogo from '@/assets/svgs/aws.svg';
-// import harvardLogo from '@/assets/svgs/harvard.svg';
-// import hackerRankLogo from '@/assets/svgs/vec.svg';
-// import ciscoLogo from '@/assets/svgs/cisco.svg';
-// import linkedinLogo from '@/assets/svgs/linkedin.svg';
 import Button from '@/components/button/Button.vue';
 
 import { GoogleIcon, AwsIcon, HarvardIcon, HackerRankIcon, CiscoIcon, LinkedinIcon } from "@/assets/svgs"
@@ -21,22 +15,18 @@ const certifications = reactive([
         src: AwsIcon
     },
     {
-        name: 'Harvard University',
-        src: HarvardIcon
-    },
-    {
         name: 'HackerRank',
         src: HackerRankIcon
-    },
-    {
-        name: 'Cisco',
-        src: CiscoIcon
     },
     {
         name: 'LinkedIn',
         src: LinkedinIcon
     },
 ]);
+
+const handleRedirect = (url) => {
+    window.open(url, "_blank")
+}
 </script>
 
 <template>
@@ -55,8 +45,10 @@ const certifications = reactive([
             </div>
 
             <div class="flex justify-center items-center gap-4 mb-12">
-                <Button variant="primary" label="See on LinkedIn" />
-                <Button label="Github" variant="secondary" />
+                <Button variant="primary" label="See on LinkedIn"
+                    @click="handleRedirect('https://www.linkedin.com/in/mochilham1006/')" />
+                <Button label="Github" variant="secondary"
+                    @click="handleRedirect('https://github.com/mochammadilham06')" />
             </div>
 
         </div>
