@@ -12,6 +12,15 @@ A modern, animation-driven portfolio built with **Vue 3 + TypeScript + Vite**. F
 - **Fully responsive** — natural mobile cards on the Works page (image + content below, descriptions always visible), stacked pinned showcase on mobile, mobile hamburger overlay menu.
 - **Lightweight** — no heavy image dependencies; decorative backgrounds are pure CSS (grid, glows, gradients).
 
+## 🔍 SEO
+
+- Per-route `<title>`, description, Open Graph, Twitter card, and canonical are set client-side (`src/utils/seo.ts` + route `meta`).
+- Canonical/OG URLs are derived from `window.location.origin`, so they stay correct on any domain.
+- **Before deploying, replace the `iampolio.com` placeholder in these static files** with the real domain:
+  - `index.html` — canonical, `og:url`, `og:image`, JSON-LD (`Person` + `WebSite`)
+  - `public/sitemap.xml`
+  - `public/robots.txt`
+
 ## 🛠 Tech Stack
 
 | Layer      | Tech                                 |
