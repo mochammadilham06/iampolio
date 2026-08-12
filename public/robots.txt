@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://iampolio.com/sitemap.xml
+Sitemap: https://iampolio.pages.dev/sitemap.xml

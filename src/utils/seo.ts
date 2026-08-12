@@ -6,11 +6,12 @@
  * Canonical/OG URLs are derived from window.location.origin so they stay
  * correct no matter which domain the site is deployed to.
  *
- * TODO: replace the iampolio.com placeholder in the STATIC files once the
- * real domain is live: index.html (canonical/og:url/og:image/JSON-LD),
+ * Live domain: https://iampolio.pages.dev/ (Cloudflare Pages).
+ * If the domain changes (e.g., custom domain), update SITE_URL below AND the
+ * static files: index.html (canonical/og:url/og:image/JSON-LD),
  * public/sitemap.xml and public/robots.txt.
  */
-export const SITE_URL = "https://iampolio.com";
+export const SITE_URL = "https://iampolio.pages.dev";
 
 export const DEFAULT_TITLE =
   "Mochammad Ilham Maulana — Creative Developer & Frontend Engineer";

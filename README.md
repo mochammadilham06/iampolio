@@ -16,10 +16,8 @@ A modern, animation-driven portfolio built with **Vue 3 + TypeScript + Vite**. F
 
 - Per-route `<title>`, description, Open Graph, Twitter card, and canonical are set client-side (`src/utils/seo.ts` + route `meta`).
 - Canonical/OG URLs are derived from `window.location.origin`, so they stay correct on any domain.
-- **Before deploying, replace the `iampolio.com` placeholder in these static files** with the real domain:
-  - `index.html` — canonical, `og:url`, `og:image`, JSON-LD (`Person` + `WebSite`)
-  - `public/sitemap.xml`
-  - `public/robots.txt`
+- Live domain: `https://iampolio.pages.dev/` (Cloudflare Pages). Canonical/OG URLs are derived from `window.location.origin`, and static files (`index.html`, `public/sitemap.xml`, `public/robots.txt`, `src/utils/seo.ts`) use `iampolio.pages.dev`.
+- **If the domain changes** (e.g., custom domain), update those 4 files.
 
 ## 🛠 Tech Stack
 
