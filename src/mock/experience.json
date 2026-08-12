@@ -2,7 +2,7 @@
     {
         "id": "50c6d8af-2dbb-42cd-abba-de25779768d6",
         "role": "Frontend Developer",
-        "description": "Frontend Developer junior at PT Gebra Kreativa Global",
+        "description": "First professional frontend role - shipped responsive marketing and landing pages for agency clients.\n• Translated design mockups into pixel-perfect, cross-browser React interfaces\n• Learned production workflows: code review, git flow, and client feedback loops\n• Delivered on tight agency timelines without sacrificing quality",
         "tech_stack": [
             "React",
             "TypeScript",
@@ -21,7 +21,7 @@
     {
         "id": "9d623e50-ce9a-4b23-be17-39e4306f6c5e",
         "role": "Frontend Developer",
-        "description": "Frontend Deveoper at Ordent",
+        "description": "Core frontend engineer on enterprise products - including Qlola Cash Management for BRI and IFG Life's corporate website.\n• Engineered high-performance banking interfaces handling massive datasets for corporate clients\n• Implemented micro-frontend architecture enabling independently deployable, parallel team delivery\n• Optimized bundles and rendering to meet strict performance budgets\n• Owned end-to-end feature delivery and mentored junior engineers",
         "tech_stack": [
             "React",
             "TypeScript",
@@ -40,7 +40,7 @@
     {
         "id": "e8cc464e-4359-490d-ada6-266213fb4396",
         "role": "React Engineer",
-        "description": "React Engineer at Accenture",
+        "description": "React engineer within a large consultancy, delivering enterprise web applications.\n• Built features following strict quality, accessibility, and security standards\n• Delivered within agile, cross-functional teams across client engagements\n• Sharpened TypeScript, testing, and design-system skills at scale",
         "tech_stack": [
             "React",
             "TypeScript",
@@ -59,7 +59,7 @@
     {
         "id": "75c266ee-2374-46ba-b87c-403151744eca",
         "role": "Associate IT Project Officer",
-        "description": "Associate IT Project Officer at BRI",
+        "description": "Currently driving IT project delivery at Indonesia's largest state-owned bank.\n• Bridge business needs and technical execution on banking platforms\n• Coordinate cross-functional teams to ship on schedule with quality\n• Focus on performance, reliability, and compliance for enterprise-scale systems",
         "tech_stack": [
             "React",
             "TypeScript",
