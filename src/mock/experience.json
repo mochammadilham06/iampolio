@@ -1,0 +1,78 @@
+[
+    {
+        "id": "50c6d8af-2dbb-42cd-abba-de25779768d6",
+        "role": "Frontend Developer",
+        "description": "Frontend Developer junior at PT Gebra Kreativa Global",
+        "tech_stack": [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Tailwind CSS",
+            "GraphQL"
+        ],
+        "start_date": "2023-03-01",
+        "end_date": "2023-06-01",
+        "company": "PT Gebra Kreativa Global",
+        "link": "https://www.oxinos.id/",
+        "is_active": false,
+        "created_at": "2026-02-04T02:03:53.255804+00:00",
+        "updated_at": "2026-02-04T02:03:53.255804+00:00"
+    },
+    {
+        "id": "9d623e50-ce9a-4b23-be17-39e4306f6c5e",
+        "role": "Frontend Developer",
+        "description": "Frontend Deveoper at Ordent",
+        "tech_stack": [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Tailwind CSS",
+            "GraphQL"
+        ],
+        "start_date": "2023-06-24",
+        "end_date": "2026-01-11",
+        "company": "PT Orde Digital Intelektual",
+        "link": "https://ordent.co/",
+        "is_active": false,
+        "created_at": "2026-02-04T02:05:25.472317+00:00",
+        "updated_at": "2026-02-04T02:05:25.472317+00:00"
+    },
+    {
+        "id": "e8cc464e-4359-490d-ada6-266213fb4396",
+        "role": "React Engineer",
+        "description": "React Engineer at Accenture",
+        "tech_stack": [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Tailwind CSS",
+            "GraphQL"
+        ],
+        "start_date": "2023-12-04",
+        "end_date": "2024-03-04",
+        "company": "Accenture",
+        "link": "https://www.accenture.com/us-en",
+        "is_active": false,
+        "created_at": "2026-02-04T02:06:45.694737+00:00",
+        "updated_at": "2026-02-04T02:06:45.694737+00:00"
+    },
+    {
+        "id": "75c266ee-2374-46ba-b87c-403151744eca",
+        "role": "Associate IT Project Officer",
+        "description": "Associate IT Project Officer at BRI",
+        "tech_stack": [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Tailwind CSS",
+            "GraphQL"
+        ],
+        "start_date": "2026-01-12",
+        "end_date": "2027-01-12",
+        "company": "PT Bank Rakyat Indonesia, Tbk",
+        "link": "https://www.accenture.com/us-en",
+        "is_active": true,
+        "created_at": "2026-02-04T02:07:51.232462+00:00",
+        "updated_at": "2026-02-04T02:08:34.989349+00:00"
+    }
+]

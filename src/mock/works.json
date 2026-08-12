@@ -1,0 +1,110 @@
+[
+    {
+        "id": "c19263ac-c045-439f-88f7-bc578ecc1692",
+        "title": "ML Ops Telkomsel",
+        "description": "Developed a comprehensive Machine Learning Operations (MLOps) web application designed to streamline the end-to-end AI lifecycle within a major telecommunications environment. This centralized platform serves as a collaborative hub, bridging the gap between experimental data science and production engineering",
+        "image": "/img/mlops-login.png",
+        "images": [
+            "/img/mlops-login.png",
+            "/img/mlops-dashboard.png"
+        ],
+        "category": null,
+        "year": "2026-02-04"
+    },
+    {
+        "id": "067b7bc1-4adf-4d75-bf39-7bb212f0d9b7",
+        "title": "Qlola Cash Management",
+        "description": "This project belongs to BRI and focuses on financial management for companies. Through this project, I learned a great deal, especially about the performance of large-scale websites handling massive amounts of data. Built with TypeScript, Next.js, Tailwind CSS, and several other supporting libraries.",
+        "image": "/img/qlola-login.png",
+        "images": [
+            "/img/qlola-login.png",
+            "/img/qlola-dashboard.png"
+        ],
+        "category": null,
+        "year": "2026-02-03"
+    },
+    {
+        "id": "956e826e-5004-46da-a998-ff737ac686a5",
+        "title": "IFG Life Corporate Website",
+        "description": "This project is a Corporate Website requested by IFG-Life. The tech stack used in this project is quite diverse, ranging from Typescript, Nextjs, Bootstrap, Tailwind (for the CMS), Quarkus (for the Backend), and many more. The project is separated into the Landing page and the CMS, employing the micro frontend concept.",
+        "image": "/img/ifg-login.png",
+        "images": [
+            "/img/ifg-login.png",
+            "/img/ifg-dashboard.png"
+        ],
+        "category": null,
+        "year": "2026-02-03"
+    },
+    {
+        "id": "2ab4abf9-1f77-4024-907a-a7f4ac6dd7bf",
+        "title": "Next Live Mading",
+        "description": "This project is a part of my Thesis program where I compare the data fetching speed of a website using Server Side Rendering with Client Side Rendering. Consequently, the built website has two different architectures on two separate websites. The stack used includes Typescript, Nextjs, Tailwind CSS, Graphql Rest API, Postgresql, and others.",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2FLive%20mading.png?alt=media&token=d093d5f1-7d12-4df5-b119-f0b8b62a9347",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2FLive%20mading.png?alt=media&token=d093d5f1-7d12-4df5-b119-f0b8b62a9347",
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2FLive%20mading.png?alt=media&token=d093d5f1-7d12-4df5-b119-f0b8b62a9347"
+        ],
+        "category": null,
+        "year": "2026-02-03"
+    },
+    {
+        "id": "61e481b7-142a-4cb5-a6fe-4f7f773e2e2f",
+        "title": "Office Booking",
+        "description": "The goal of this project is to develop an web-based platform to rent office spaces across Jakarta. Office booking aims for the convenience of user when searching for a suitable working space in Jakarta’s business district areas.\n\nIt is also important for the business to manage its listings, customers, and marketing & negotiation history for managerial purposes. This web application is built using React JS, Tailwind CSS, Material UI, and several supporting libraries such as Axios and ChartJs",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2F1.png?alt=media&token=71863399-a3ab-448b-a626-86033cb1d42c",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2F1.png?alt=media&token=71863399-a3ab-448b-a626-86033cb1d42c",
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2F1.png?alt=media&token=71863399-a3ab-448b-a626-86033cb1d42c"
+        ],
+        "category": null,
+        "year": "2026-02-03"
+    },
+    {
+        "id": "96a722b0-4870-4fa3-b582-594ab4c7dc46",
+        "title": "Research Submission System",
+        "description": "This application project was created to meet the needs of applying for grants and reviewer incentives so that they can assist the process of lecturers and staff in conducting research. This application is built using Laravel",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fdashboard-admin.png?alt=media&token=7ebb4629-6f41-4c54-a1a8-2333e0b075ab",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fdashboard-admin.png?alt=media&token=7ebb4629-6f41-4c54-a1a8-2333e0b075ab",
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fdashboard-admin.png?alt=media&token=7ebb4629-6f41-4c54-a1a8-2333e0b075ab"
+        ],
+        "category": null,
+        "year": "2026-02-03"
+    },
+    {
+        "id": "eb8b1ea7-7186-499c-9e4d-88f16196a7cb",
+        "title": "System Monitoring Sales Furniture",
+        "description": "This application is an Inventory application that is used to monitor the entry and exit of furniture items. The difficulty of this application is the automatic code generator during transactions, handling bugs in transactions and so on. This application is built with Java, and some supporting libraries",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fsk2.png?alt=media&token=3c9c0dad-4077-441c-a148-b1d3f24427d6",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fsk2.png?alt=media&token=3c9c0dad-4077-441c-a148-b1d3f24427d6",
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fsk2.png?alt=media&token=3c9c0dad-4077-441c-a148-b1d3f24427d6"
+        ],
+        "category": null,
+        "year": "2026-02-03"
+    },
+    {
+        "id": "fce63384-7afc-461a-8ae4-a9f99268ee8b",
+        "title": "New Student Registration Application",
+        "description": "This application is an application aimed at Lokasari State Elementary School in the Cipanas Region to assist in the student registration process and printing of registration forms. The challenge in making this application is the creation of participant cards, filters for passing participants and validation from the school principal. This application is built with Java, and some supporting libraries",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fsk6.png?alt=media&token=5ceed8b5-cafa-4194-a795-0a9ecfa0918e",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fsk6.png?alt=media&token=5ceed8b5-cafa-4194-a795-0a9ecfa0918e",
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2Fsk6.png?alt=media&token=5ceed8b5-cafa-4194-a795-0a9ecfa0918e"
+        ],
+        "category": null,
+        "year": "2026-02-03"
+    },
+    {
+        "id": "a90dffc3-41fc-49ae-94b9-326b0a4228ad",
+        "title": "Dynamic Portfolio Website",
+        "description": "This Portfolio Website Project was created as a material for applying the knowledge I have learned, besides that this website was created as a preparation for me to enter the world of work someday. This website is built with Javascript, ReactJS, Tailwind CSS, GraphQL, Apollo Client, and several libraries",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2FDPW.png?alt=media&token=b11fcf20-c716-4abe-add0-691534d1c49d",
+        "images": [
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2FDPW.png?alt=media&token=b11fcf20-c716-4abe-add0-691534d1c49d",
+            "https://firebasestorage.googleapis.com/v0/b/mini-project-portfolio.appspot.com/o/files%2FDPW.png?alt=media&token=b11fcf20-c716-4abe-add0-691534d1c49d"
+        ],
+        "category": null,
+        "year": "2026-02-03"
+    }
+]
