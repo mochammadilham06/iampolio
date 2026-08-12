@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      font-family: 'Barlow', Arial, sans-serif;
+      background: #121120;
+    }
+    .canvas {
+      width: 1200px;
+      height: 630px;
+      position: relative;
+      background: #121120;
+      display: flex;
+      align-items: center;
+      padding: 0 90px;
+    }
+    /* Subtle grid, matching the site hero */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 56px 56px;
+      -webkit-mask-image: radial-gradient(ellipse 85% 75% at 30% 40%, black 25%, transparent 75%);
+      mask-image: radial-gradient(ellipse 85% 75% at 30% 40%, black 25%, transparent 75%);
+    }
+    .glow-orange {
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      left: -160px;
+      top: -240px;
+      background: radial-gradient(circle, rgba(255,81,47,0.75), transparent 62%);
+      filter: blur(70px);
+      pointer-events: none;
+    }
+    .glow-amber {
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      right: -140px;
+      bottom: -260px;
+      background: radial-gradient(circle, rgba(240,152,25,0.55), transparent 62%);
+      filter: blur(70px);
+      pointer-events: none;
+    }
+    .accent-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 14px;
+      background: linear-gradient(180deg, #ff512f, #f09819);
+    }
+    .glow-violet {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      right: 180px;
+      top: -160px;
+      background: radial-gradient(circle, rgba(124,77,255,0.28), transparent 65%);
+      filter: blur(70px);
+      pointer-events: none;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 34px;
+    }
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,81,47,0.6);
+      box-shadow: 0 0 40px rgba(255,81,47,0.35);
+    }
+    .logo-tag {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.34em;
+      color: #adabc7;
+      text-transform: uppercase;
+    }
+    .name {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: #f5f5f7;
+      margin-bottom: 18px;
+    }
+    .role {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ff512f, #f09819);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      margin-bottom: 22px;
+    }
+    .tagline {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.45;
+      color: #adabc7;
+      max-width: 780px;
+      margin-bottom: 40px;
+    }
+    .divider {
+      width: 120px;
+      height: 4px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #ff512f, #f09819);
+      margin-bottom: 30px;
+    }
+    .url {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #f5f5f7;
+    }
+    .url .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff512f;
+      box-shadow: 0 0 12px rgba(255,81,47,0.8);
+    }
+    .url .mono {
+      font-weight: 500;
+      color: #adabc7;
+      letter-spacing: 0.12em;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="grid"></div>
+    <div class="glow-orange"></div>
+    <div class="glow-amber"></div>
+    <div class="glow-violet"></div>
+    <div class="accent-bar"></div>
+
+    <div class="content">
+      <div class="logo-wrap">
+        <img class="logo" src="../src/assets/logo.png" alt="" />
+        <span class="logo-tag">IAM POLIO</span>
+      </div>
+
+      <div class="name">Mochammad<br />Ilham Maulana</div>
+      <div class="role">Creative Developer &amp; Frontend Engineer</div>
+      <p class="tagline">Building high-performance web experiences, micro-frontends &amp; scalable interfaces for businesses worldwide.</p>
+
+      <div class="divider"></div>
+
+      <div class="url">
+        <span class="dot"></span>
+        iampolio.com
+        <span class="mono">● Available for projects</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

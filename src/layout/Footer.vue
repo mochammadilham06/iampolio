@@ -55,7 +55,7 @@ const handleStart = () => {
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue" class="w-5 h-5" loading="lazy" />
       </div>
 
-      <p class="opacity-30 text-sm text-white">©moch.ilham10 @{{ dateNow }}</p>
+      <p class="opacity-30 text-sm text-white">© {{ dateNow }} Mochammad Ilham Maulana</p>
     </section>
   </footer>
 </template>

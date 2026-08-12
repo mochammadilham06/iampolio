@@ -62,8 +62,8 @@
     <div v-reveal="{ y: 40, delay: 0.15 }" class="max-w-3xl mx-auto text-center mt-10 px-2">
       <p class="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
         Software Engineer with expertise in Frontend Architecture and growing proficiency in Backend Engineering.
-        Currently contributing to enterprise-grade banking solutions at PT Bank Rakyat Indonesia, focusing on scalable
-        Micro Frontend systems and performance optimization.
+        Currently contributing to enterprise-grade solutions — focusing on scalable Micro Frontend systems and
+        performance optimization.
       </p>
     </div>
   </section>
