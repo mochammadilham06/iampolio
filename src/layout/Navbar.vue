@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import Button from "@/components/button/Button.vue";
-import { onMounted, onUnmounted, ref } from "vue";
+import { nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 const router = useRouter();
 
 const navPath = ref([
+  { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
   { name: "Experience", path: "/experience" },
   { name: "Works", path: "/works" },
@@ -15,6 +16,20 @@ const navPath = ref([
 const scrolled = ref(false);
 const hidden = ref(false);
 const menuOpen = ref(false);
+const overlayEl = ref<HTMLElement | null>(null);
+const hamburgerBtn = ref<HTMLButtonElement | null>(null);
+
+// Focus management: move focus into the menu dialog on open, restore it to the
+// hamburger button on close (so keyboard/tab users never land on page content
+// hidden behind the overlay).
+watch(menuOpen, async (open) => {
+  if (open) {
+    await nextTick();
+    overlayEl.value?.focus();
+  } else {
+    hamburgerBtn.value?.focus();
+  }
+});
 
 let lastScrollY = 0;
 
@@ -29,12 +44,19 @@ const onScroll = () => {
   lastScrollY = y;
 };
 
+const onKeydown = (e: KeyboardEvent) => {
+  if (!menuOpen.value) return;
+  if (e.key === "Escape") menuOpen.value = false;
+};
+
 onMounted(() => {
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("keydown", onKeydown);
 });
 
 onUnmounted(() => {
   window.removeEventListener("scroll", onScroll);
+  window.removeEventListener("keydown", onKeydown);
 });
 
 const goTo = (path: string) => {
@@ -51,8 +73,8 @@ const goTo = (path: string) => {
   >
     <div class="w-full max-w-4xl mx-auto">
       <div
-        class="bg-white/85 backdrop-blur-xl w-full mx-auto px-3 py-3 flex max-h-16 justify-between items-center text-[#121120] rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition-all duration-500"
-        :class="scrolled ? 'max-h-14 py-2' : 'max-h-16'"
+        class="bg-white/85 backdrop-blur-xl w-full mx-auto px-3 py-3 flex justify-between items-center text-[#121120] rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition-all duration-500"
+        :class="scrolled ? 'py-2' : 'py-3'"
       >
         <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 cursor-pointer" @click="goTo('/')">
           <img src="@/assets/logo.png" alt="Logo" class="w-full h-full object-cover rounded-full" loading="eager" fetchpriority="high" />
@@ -61,8 +83,8 @@ const goTo = (path: string) => {
         <!-- Desktop nav -->
         <nav class="hidden md:flex gap-1 items-center font-medium bg-[#121120]/5 rounded-full p-1">
           <RouterLink
-            v-for="(path, index) in navPath"
-            :key="index"
+            v-for="path in navPath"
+            :key="path.path"
             :to="path.path"
             class="px-4 py-1.5 rounded-full text-sm transition-all duration-300 hover:text-[#FF512F]"
             :class="route.path === path.path ? 'bg-[#FF512F] text-white shadow-[0_4px_14px_rgba(255,81,47,0.4)]' : 'text-gray-600 hover:bg-[#121120]/5'"
@@ -82,6 +104,7 @@ const goTo = (path: string) => {
           />
           <!-- Hamburger mobile -->
           <button
+            ref="hamburgerBtn"
             class="md:hidden w-11 h-11 rounded-full flex flex-col items-center justify-center gap-[5px] bg-[#121120] hover:bg-[#FF512F] transition-colors duration-300 cursor-pointer"
             :aria-label="menuOpen ? 'Close menu' : 'Open menu'"
             :aria-expanded="menuOpen"
@@ -95,24 +118,37 @@ const goTo = (path: string) => {
       </div>
     </div>
 
-    <!-- Mobile overlay menu -->
-    <transition name="menu">
-      <div v-if="menuOpen" class="md:hidden fixed inset-0 z-[-1] bg-[#121120]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8">
-        <div class="hero-glow w-[400px] h-[400px] bg-[#FF512F]/15 top-0 right-0"></div>
-        <RouterLink
-          v-for="(path, index) in [{ name: 'Home', path: '/' }, ...navPath]"
-          :key="path.path"
-          :to="path.path"
-          class="menu-item text-5xl font-black tracking-tight text-white/90 transition-colors duration-300 hover:text-[#FF512F] focus-visible:text-[#FF512F]"
-          :class="route.path === path.path ? 'text-[#FF512F]' : ''"
-          :style="{ transitionDelay: `${index * 60}ms` }"
-          @click="menuOpen = false"
+    <!-- Mobile overlay menu: Teleported to <body> so the header's translate
+         property (Tailwind v4) cannot trap its position:fixed inside the ~96px
+         header box, which cut off the top items. -->
+    <Teleport to="body">
+      <transition name="menu">
+        <div
+          v-if="menuOpen"
+          ref="overlayEl"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+          tabindex="-1"
+          class="md:hidden fixed inset-0 z-40 bg-[#121120]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-5 sm:gap-8 px-6 outline-none"
+          @click.self="menuOpen = false"
         >
-          {{ path.name }}
-        </RouterLink>
-        <Button variant="primary" label="LinkedIn" size="lg" class="!rounded-full menu-item" @click="handleRedirect" />
-      </div>
-    </transition>
+          <div class="hero-glow w-[400px] h-[400px] bg-[#FF512F]/15 top-0 right-0"></div>
+          <RouterLink
+            v-for="(path, index) in navPath"
+            :key="path.path"
+            :to="path.path"
+            class="menu-item text-4xl sm:text-5xl leading-tight font-black tracking-tight text-white/90 transition-colors duration-300 hover:text-[#FF512F] focus-visible:text-[#FF512F]"
+            :class="route.path === path.path ? 'text-[#FF512F]' : ''"
+            :style="{ transitionDelay: `${index * 60}ms` }"
+            @click="menuOpen = false"
+          >
+            {{ path.name }}
+          </RouterLink>
+          <Button variant="primary" label="LinkedIn" size="lg" class="!rounded-full menu-item" @click="handleRedirect" />
+        </div>
+      </transition>
+    </Teleport>
   </header>
 </template>
 
