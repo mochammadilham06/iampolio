@@ -14,14 +14,14 @@ A modern, animation-driven portfolio built with **Vue 3 + TypeScript + Vite**. F
 
 ## 🛠 Tech Stack
 
-| Layer | Tech |
-|---|---|
-| Framework | Vue 3 (`<script setup>`, TypeScript) |
-| Build tool | Vite 6 |
-| Styling | Tailwind CSS 4 |
-| Animations | GSAP + ScrollTrigger, Lenis |
-| Router | Vue Router 4 |
-| HTTP | Axios |
+| Layer      | Tech                                 |
+| ---------- | ------------------------------------ |
+| Framework  | Vue 3 (`<script setup>`, TypeScript) |
+| Build tool | Vite 6                               |
+| Styling    | Tailwind CSS 4                       |
+| Animations | GSAP + ScrollTrigger, Lenis          |
+| Router     | Vue Router 4                         |
+| HTTP       | Axios                                |
 
 ## 📁 Project Structure
 
@@ -60,53 +60,6 @@ yarn build
 # Preview the production build
 yarn preview
 ```
-
-## ⚙️ Environment Variables
-
-Create a `.env` file in the project root (see `.env.example` if available):
-
-```env
-VITE_APP_API_URL=https://your-api.example.com
-VITE_APP_API_KEY=your-secret-key
-```
-
-- If `VITE_APP_API_URL` is **not set** or the API call **fails**, the app automatically falls back to the local mock data in `src/mock/`.
-- Expected API responses:
-  - `GET /projects?limit=10` → `{ "myportfolio_portfolio": [...] }`
-  - `GET /experiences` → `{ "myportfolio_experience": [...] }`
-
-## 🖼 Screenshots & Data
-
-The home showcase and the Works grid resolve project images through `resolveProjectImages()` in `src/service/mock.ts`, which maps project titles to local screenshots:
-
-```ts
-const LOCAL_SCREENSHOTS = {
-  'ML Ops Telkomsel': ['/img/mlops-login.png', '/img/mlops-dashboard.png'],
-  'Qlola Cash Management': ['/img/qlola-login.png', '/img/qlola-dashboard.png'],
-  'IFG Life Corporate Website': ['/img/ifg-login.png', '/img/ifg-dashboard.png'],
-};
-```
-
-- **`images[0]`** = first screenshot (landing/login view)
-- **`images[1]`** = second screenshot (dashboard/feature view)
-
-To add screenshots for other projects, drop the files into `public/img/` and register them in the map. Any image that fails to load shows a styled "Screenshot unavailable" fallback panel instead of a broken icon.
-
-## 🏆 Certifications
-
-`src/container/home/Certification.vue` contains a `certifications` array. The AWS card supports a real badge image:
-
-```ts
-const AWS_BADGE_IMAGE = ''; // ← paste your Credly badge image URL here
-```
-
-To promote a certification from **Ongoing** to **Verified**, set `status: 'verified'` and add its credential `url`.
-
-## ♿ Accessibility
-
-- All scroll animations respect `prefers-reduced-motion` (animations disabled, static fallbacks shown).
-- Semantically correct headings, `aria` labels on interactive elements, visible focus rings.
-- Ongoing certification cards are not links (no fake verification links).
 
 ## 📄 License
 
