@@ -28,7 +28,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="min-h-screen text-white px-4 py-8 md:p-8 md:py-24 relative overflow-hidden bg-[#121120]">
+    <div class="min-h-screen text-white px-4 pt-28 pb-8 md:p-8 md:py-24 relative overflow-hidden bg-[#121120]">
         <!-- Decorative glow matching the home page -->
         <div class="hero-glow w-[460px] h-[460px] bg-[#FF512F]/10 -top-32 -left-40"></div>
         <div class="hero-glow w-[420px] h-[420px] bg-[#F09819]/[0.07] -bottom-24 -right-32"></div>
@@ -39,12 +39,12 @@ onMounted(() => {
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 relative">
                 <div class="absolute left-0 top-2 bottom-2 w-1 bg-[#FF512F] rounded-full hidden md:block"></div>
 
-                <div class="mx-6 w-full md:w-auto">
-                    <h2 class="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none">
+                <div class="w-full md:w-auto md:mx-6">
+                    <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none">
                         MY <br />
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">JOURNEY</span>
-                    </h2>
+                    </h1>
 
                     <div class="flex items-center gap-4 mt-4 text-xs text-gray-400">
                         <div class="flex items-center">
@@ -143,10 +143,10 @@ onMounted(() => {
                                 </div>
                             </div>
 
-                            <h3
+                            <h2
                                 class="text-3xl font-bold mb-2 pr-20 md:pr-0 transition-colors duration-300 group-hover:text-[#FF512F]">
                                 {{ exp.company }}
-                            </h3>
+                            </h2>
 
                             <div class="flex flex-wrap items-center gap-3 text-sm mb-6 uppercase tracking-wider">
                                 <span class="text-[#FF512F] font-bold">{{ exp.role }}</span>
@@ -154,7 +154,7 @@ onMounted(() => {
                                 <span class="text-gray-400">{{ exp.start_date }} - {{ exp.end_date }}</span>
                             </div>
 
-                            <p class="text-gray-400 leading-relaxed mb-8 max-w-3xl">
+                            <p class="text-gray-400 leading-relaxed whitespace-pre-line mb-8 max-w-3xl">
                                 {{ exp.description }}
                             </p>
 

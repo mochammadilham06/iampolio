@@ -27,19 +27,19 @@ const services = ref([
 </script>
 
 <template>
-    <div class="max-w-7xl mx-auto py-16 md:py-24 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto pt-28 pb-16 px-4 md:px-8 md:py-24">
 
         <div v-reveal="{ stagger: 0.15, y: 50 }" class="flex flex-col md:flex-row items-start gap-6 mb-16">
             <div class="hidden md:block w-1 h-32 bg-[#FF512F]"></div>
 
             <div>
-                <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-6">
+                <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-6">
                     <span class="text-white">TECHNICAL</span>
                     <br />
                     <span class="text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-gray-700">
                         EXPERTISE
                     </span>
-                </h2>
+                </h1>
 
                 <div class="flex items-start gap-4">
                     <span class="text-[#FF512F] font-mono mt-1">///</span>
@@ -81,7 +81,7 @@ const services = ref([
                         </svg>
                     </div>
 
-                    <h3 class="text-2xl font-bold text-white mb-4">{{ service.title }}</h3>
+                    <h2 class="text-2xl font-bold text-white mb-4">{{ service.title }}</h2>
 
                     <p class="text-gray-400 text-sm leading-relaxed mb-8">
                         {{ service.description }}

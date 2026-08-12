@@ -63,10 +63,10 @@ const onImgError = (e: Event) => {
             <div class="h-16 md:h-24 w-64 bg-gray-800 rounded mb-2"></div>
             <div class="h-16 md:h-24 w-48 bg-gray-800 rounded"></div>
           </div>
-          <h2 v-else class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
+          <h1 v-else class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
             SELECTED <br />
             <span class="text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-gray-700">WORKS</span>
-          </h2>
+          </h1>
         </div>
 
         <div class="mt-6 md:mt-0 md:max-w-xs text-xs md:text-sm text-gray-400 font-mono tracking-widest uppercase">
@@ -136,15 +136,15 @@ const onImgError = (e: Event) => {
           <!-- Konten: mobile = di bawah gambar; desktop = overlay bawah -->
           <div class="relative flex flex-col p-5 md:absolute md:inset-0 md:p-8">
             <div class="mt-auto">
-              <h3
+              <h2
                 class="font-bold uppercase tracking-tight text-white md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500"
                 :class="index === 0 ? 'text-2xl md:text-5xl' : 'text-xl md:text-3xl'"
               >
                 {{ project.title }}
-              </h3>
+              </h2>
               <p
                 v-if="index === 0"
-                class="text-gray-300 text-sm mt-2 line-clamp-3 md:line-clamp-none md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-500 md:delay-100"
+                class="text-gray-300 text-sm mt-2 line-clamp-3 whitespace-pre-line md:line-clamp-none md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-500 md:delay-100"
               >
                 {{ project.description }}
               </p>
