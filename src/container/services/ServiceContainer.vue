@@ -27,9 +27,9 @@ const services = ref([
 </script>
 
 <template>
-    <div class="max-w-7xl mx-auto py-24 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto py-16 md:py-24 px-4 md:px-8">
 
-        <div class="flex flex-col md:flex-row items-start gap-6 mb-16">
+        <div v-reveal="{ stagger: 0.15, y: 50 }" class="flex flex-col md:flex-row items-start gap-6 mb-16">
             <div class="hidden md:block w-1 h-32 bg-[#FF512F]"></div>
 
             <div>
@@ -52,10 +52,10 @@ const services = ref([
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div v-reveal="{ stagger: 0.12, y: 60 }" class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <div v-for="service in services" :key="service.id"
-                class="group relative border border-gray-800 rounded-lg p-8 h-full flex flex-col justify-between hover:border-[#FF512F] transition-colors duration-300">
+                class="group relative border border-gray-800 rounded-lg p-8 h-full flex flex-col justify-between hover:border-[#FF512F] transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.02]">
                 <div>
                     <div
                         class="w-12 h-12 rounded-full bg-[#FF512F]/10 flex items-center justify-center mb-6 group-hover:bg-[#FF512F] transition-colors duration-300">

@@ -38,7 +38,7 @@ import { RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-/* Opsional: Animasi halus agar angka 404 sedikit melayang */
+/* Optional: gentle floating animation for the 404 digits */
 @keyframes float {
 
     0%,

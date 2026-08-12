@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import { ExperienceService } from '@/service';
 
 const { getExperience } = ExperienceService();
-const isLoading = ref(true); // Default true saat mounted agar skeleton muncul dulu
+const isLoading = ref(true); // Default true on mount so the skeleton shows first
 
 const experiences = ref([]);
 
@@ -28,14 +28,19 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="min-h-screen text-white p-8 md:py-24 relative overflow-hidden bg-[#050505]">
+    <div class="min-h-screen text-white px-4 py-8 md:p-8 md:py-24 relative overflow-hidden bg-[#121120]">
+        <!-- Decorative glow matching the home page -->
+        <div class="hero-glow w-[460px] h-[460px] bg-[#FF512F]/10 -top-32 -left-40"></div>
+        <div class="hero-glow w-[420px] h-[420px] bg-[#F09819]/[0.07] -bottom-24 -right-32"></div>
+        <div class="absolute inset-0 bg-grid opacity-60"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#121120]/60 via-transparent to-[#121120]"></div>
         <div class="max-w-5xl mx-auto relative z-10">
 
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 relative">
                 <div class="absolute left-0 top-2 bottom-2 w-1 bg-[#FF512F] rounded-full hidden md:block"></div>
 
                 <div class="mx-6 w-full md:w-auto">
-                    <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">
+                    <h2 class="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none">
                         MY <br />
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">JOURNEY</span>
@@ -78,11 +83,11 @@ onMounted(() => {
                 <div v-if="isLoading">
                     <div v-for="i in 3" :key="i" class="relative mb-12 ml-12 md:ml-8">
                         <div
-                            class="absolute -left-[41px] md:-left-[37px] top-5 w-4 h-4 rounded-full bg-gray-800 border-2 border-[#050505] z-20">
+                            class="absolute -left-[41px] md:-left-[37px] top-5 w-4 h-4 rounded-full bg-gray-800 border-2 border-[#121120] z-20">
                         </div>
                         <div class="absolute -left-[35px] top-7 w-8 h-px bg-white/10"></div>
 
-                        <div class="relative border border-gray-800 rounded-lg p-6 md:p-8 bg-[#0a0a0a]">
+                        <div class="relative border border-gray-800 rounded-lg p-6 md:p-8 bg-white/[0.04]">
 
                             <div class="hidden md:flex absolute top-4 right-4 items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-gray-700 animate-pulse"></div>
@@ -111,20 +116,20 @@ onMounted(() => {
                     </div>
                 </div>
 
-                <div v-else>
+                <div v-reveal="{ stagger: 0.12, y: 60 }" v-else>
                     <div v-for="(exp, index) in experiences" :key="exp.id" class="relative mb-12 ml-12 md:ml-8 group">
                         <div
-                            class="absolute -left-[41px] md:-left-[37px] top-5 w-4 h-4 rounded-full bg-[#FF512F] border-2 border-[#050505] z-20 animate-pulse-orange shadow-[0_0_10px_#FF512F70]">
+                            class="absolute -left-[41px] md:-left-[37px] top-5 w-4 h-4 rounded-full bg-[#FF512F] border-2 border-[#121120] z-20 animate-pulse-orange shadow-[0_0_10px_#FF512F70]">
                         </div>
                         <div
                             class="absolute -left-[35px] top-7 w-8 h-px bg-white/10 group-hover:bg-[#FF512F]/50 transition-colors duration-300">
                         </div>
 
                         <div
-                            class="relative border border-gray-400 rounded-lg p-6 md:p-8 transition-all duration-500 ease-out 
+                            class="relative border border-white/10 bg-white/[0.04] rounded-lg p-6 md:p-8 backdrop-blur-md transition-all duration-500 ease-out 
                                     group-hover:border-[#FF512F] group-hover:shadow-[0_0_30px_-5px_rgba(255,81,47,0.3)] group-hover:-translate-y-1">
 
-                            <div class="absolute top-4 right-4 font-mono text-[10px] text-[#FF512F] hidden md:block">
+                            <div class="absolute top-4 right-4 font-mono text-[10px] text-[#FF512F]">
                                 <div class="flex items-center mt-1">
                                     <span v-if="exp.status === 'ACTIVE'"
                                         class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
@@ -139,7 +144,7 @@ onMounted(() => {
                             </div>
 
                             <h3
-                                class="text-3xl font-bold mb-2 transition-colors duration-300 group-hover:text-[#FF512F]">
+                                class="text-3xl font-bold mb-2 pr-20 md:pr-0 transition-colors duration-300 group-hover:text-[#FF512F]">
                                 {{ exp.company }}
                             </h3>
 

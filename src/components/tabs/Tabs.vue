@@ -33,7 +33,8 @@ const selectTab = (tab) => {
 
 <template>
     <div class="inline-flex items-center p-1.5 space-x-1 bg-white/5 rounded-full shadow-inner">
-        <Button v-for="tab in props.tabs" :key="tab" @click="selectTab(tab)" :class="[
+        <Button v-for="tab in props.tabs" :key="tab" @click="selectTab(tab)"
+            :variant="activeTab === tab ? 'primary' : 'ghost'" :class="[
             'px-6 py-2 text-sm !rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-white hover:cursor-pointer',
             {
                 'bg-white text-black shadow-sm': activeTab === tab,

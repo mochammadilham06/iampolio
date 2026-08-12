@@ -53,7 +53,7 @@ const reloadPage = () => {
 </template>
 
 <style scoped>
-/* Animasi lambat untuk background glow agar terasa seperti 'warning' */
+/* Slow pulse for the background glow to feel like a warning */
 .animate-pulse {
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -70,7 +70,7 @@ const reloadPage = () => {
     }
 }
 
-/* Animasi float untuk angka */
+/* Floating animation for the digits */
 @keyframes float {
 
     0%,
