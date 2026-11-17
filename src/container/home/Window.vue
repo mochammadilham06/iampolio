@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { LinkedinIcon, GithubIcon, GitlabIcon, InstagramIcon, DribbbleIcon } from "@/assets"
 import { useRouter } from 'vue-router';
 import { prefersReducedMotion } from '@/utils/animations';
+import { CONST } from '@/utils/const';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,34 +13,34 @@ const sectionRef = ref<HTMLElement | null>(null);
 let ctx: gsap.Context | null = null;
 
 onMounted(() => {
-  if (prefersReducedMotion() || !sectionRef.value) return;
+    if (prefersReducedMotion() || !sectionRef.value) return;
 
-  ctx = gsap.context(() => {
-    // Subtle parallax for decorative images (scaled first to avoid gaps)
-    const parallaxLayers: Record<string, { scale: number; yPercent: number }> = {
-      '.parallax-people': { scale: 1.25, yPercent: 10 },
-      '.parallax-visual': { scale: 1.15, yPercent: 8 },
-      '.parallax-tech': { scale: 1.15, yPercent: -6 },
-    };
+    ctx = gsap.context(() => {
+        // Subtle parallax for decorative images (scaled first to avoid gaps)
+        const parallaxLayers: Record<string, { scale: number; yPercent: number }> = {
+            '.parallax-people': { scale: 1.25, yPercent: 10 },
+            '.parallax-visual': { scale: 1.15, yPercent: 8 },
+            '.parallax-tech': { scale: 1.15, yPercent: -6 },
+        };
 
-    Object.entries(parallaxLayers).forEach(([selector, cfg]) => {
-      gsap.set(selector, { scale: cfg.scale });
-      gsap.to(selector, {
-        yPercent: cfg.yPercent,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: selector,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 0.6,
-        },
-      });
-    });
-  }, sectionRef.value);
+        Object.entries(parallaxLayers).forEach(([selector, cfg]) => {
+            gsap.set(selector, { scale: cfg.scale });
+            gsap.to(selector, {
+                yPercent: cfg.yPercent,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: selector,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 0.6,
+                },
+            });
+        });
+    }, sectionRef.value);
 });
 
 onUnmounted(() => {
-  ctx?.revert();
+    ctx?.revert();
 });
 
 interface SocialLink {
@@ -63,7 +64,7 @@ const socialsBottom = ref<SocialLink[]>([
 const router = useRouter()
 
 const handleDownloadCV = () => {
-    window.open("https://drive.google.com/file/d/18pZ1UrONICWv_xCaMizgYU2DnNS5N3hG/view?usp=sharing", "_blank")
+    window.open(CONST.BASEURLCV, "_blank")
 }
 </script>
 
@@ -79,7 +80,8 @@ const handleDownloadCV = () => {
                         <h3 class="text-xl lg:text-2xl font-bold mt-1">Always used Technology</h3>
                     </div>
                     <div class="h-full w-full absolute inset-0 pt-20 lg:pt-0">
-                        <img src="@/assets/icon-tech.png" class="parallax-tech w-full h-full overflow-hidden object-cover" loading="lazy" />
+                        <img src="@/assets/icon-tech.png"
+                            class="parallax-tech w-full h-full overflow-hidden object-cover" loading="lazy" />
                     </div>
                     <div
                         class="absolute -top-12 -right-12 w-32 h-32 col-span-3 bg-[#121120] blur-3xl rounded-full transition-all duration-500 group-hover:bg-blue-500/30 group-hover:scale-200">
@@ -143,12 +145,14 @@ const handleDownloadCV = () => {
                 </div>
 
                 <div class="lg:col-span-4 mt-2 lg:mt-6">
-                    <div v-reveal="{ stagger: 0.1, y: 50, delay: 0.1 }" class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+                    <div v-reveal="{ stagger: 0.1, y: 50, delay: 0.1 }"
+                        class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
 
                         <div
                             class="group relative rounded-2xl p-6 lg:p-8 flex flex-col justify-end overflow-hidden bg-slate-900 min-h-[300px] lg:min-h-[300px]">
                             <img src="@/assets/bg-visual.png" alt="Abstract background"
-                                class="parallax-visual absolute inset-0 w-full h-full object-cover group-hover:opacity-70 group-hover:scale-105 transition-all duration-500" loading="lazy" />
+                                class="parallax-visual absolute inset-0 w-full h-full object-cover group-hover:opacity-70 group-hover:scale-105 transition-all duration-500"
+                                loading="lazy" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent">
                             </div>
@@ -179,7 +183,8 @@ const handleDownloadCV = () => {
                         <div
                             class="lg:row-span-2 group relative rounded-2xl flex flex-col justify-between overflow-hidden min-h-[400px] lg:min-h-full">
                             <img src="@/assets/people.png" alt="Qlola Cash Management"
-                                class="parallax-people absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-40 transition-opacity duration-500" loading="lazy" />
+                                class="parallax-people absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-40 transition-opacity duration-500"
+                                loading="lazy" />
 
                             <div class="relative z-10 p-6 lg:p-10">
                                 <h1 class="text-xl lg:text-2xl font-semibold text-slate-300">Last Project</h1>
